@@ -1,1 +1,1 @@
-All
+We use the power of friendship.
