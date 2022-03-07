@@ -1,5 +1,0 @@
-﻿  Core.cpp
-  Employee.cpp
-D:\Development\Repository\Collaboration\Core\Core\Employee.cpp(33,84): warning C4244: '+=': conversion from 'double' to 'unsigned short', possible loss of data
-  Generating Code...
-  Core.vcxproj -> D:\Development\Repository\Collaboration\Core\x64\Debug\Core.exe
