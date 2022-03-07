@@ -5,4 +5,5 @@ using namespace std;
 int main()
 {
 	ComponentNo1 c1_1;
+	ComponentNo1 c1_2;
 }
