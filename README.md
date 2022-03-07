@@ -1,1 +1,1 @@
-We use the power of friendship.
+Core project.
