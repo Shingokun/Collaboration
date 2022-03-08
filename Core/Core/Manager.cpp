@@ -16,19 +16,13 @@ Manager::Manager(std::string name, std::string gender, std::string date_of_birth
 	Manager::Title = "Manager";
 	std::cout << "Profile created. (" << Manager::Name << ")" << std::endl;
 }
-
-std::string Manager::getName()
-{
+std::string Manager::getName() {
 	return Manager::Name;
 }
-
-std::string Manager::getGender()
-{
+std::string Manager::getGender() {
 	return Manager::Gender;
 }
-
-std::string Manager::getDate_of_birth()
-{
+std::string Manager::getDate_of_birth() {
 	return Manager::Date_of_birth;
 }
 
@@ -36,14 +30,10 @@ std::string Manager::getJoin_date()
 {
 	return Manager::Join_date;
 }
-
-std::string Manager::getTitle()
-{
+std::string Manager::getTitle() {
 	return Manager::Title;
 }
-
-unsigned short Manager::getAge()
-{
+unsigned short Manager::getAge() {
 	time_t now = time(0);
 	tm* localtm = localtime(&now);
 	unsigned short temp = Manager::Date_of_birth[Manager::Date_of_birth.length() - 1] - 48;
@@ -54,13 +44,10 @@ unsigned short Manager::getAge()
 	Manager::Age = 1900 + localtm->tm_year - temp;
 	return Manager::Age;
 }
-
-unsigned int Manager::getWorkingID()
-{
+unsigned int Manager::getWorkingID() {
 	return 0;
 }
-bool Manager::getActive_state()
-{
+bool Manager::getActive_state() {
 	return Manager::Active_state;
 }
 void activateWorkingDocument(Manager& object, unsigned short height, unsigned short weight) {
