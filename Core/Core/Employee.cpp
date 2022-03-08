@@ -1,9 +1,10 @@
 #pragma warning(disable : 4996)
-#include "Employee.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include "Employee.h"
+#include "Manager.h"
 
 Employee::Employee(std::string name, std::string gender, std::string date_of_birth)
 	: Name(name), Gender(gender), Date_of_birth(date_of_birth) {
@@ -14,7 +15,7 @@ Employee::Employee(std::string name, std::string gender, std::string date_of_bir
 		(localtm->tm_mon >= 10 ? std::to_string(localtm->tm_mday + 1) : ("0" + std::to_string(localtm->tm_mday + 1))) +
 		std::to_string(1900 + localtm->tm_year);
 	Employee::Title = "Employee";
-	std::cout << "Profile created." << std::endl;
+	std::cout << "Profile created. (" << Employee::Name << ")" << std::endl;
 }
 std::string Employee::getName() {
 	return Employee::Name;
@@ -58,11 +59,16 @@ bool Employee::getActive_state() {
 float Employee::getSalary() {
 	return Employee::Salary;
 }
-void Employee::setSalary(float salary) {
-	Employee::Salary = salary * (100 + Employee::Productivity_bonus) / 100;
+void Employee::setSalary(float salary, Manager& object) {
+	if (object.getActive_state() == true) Employee::Salary = salary * (100 + Employee::Productivity_bonus) / 100;
+	else std::cout << "Access denied. (Manager's state is deactivated)" << std::endl;
 }
-void Employee::setProductivity_bonus(float productivity_bonus) {
-	Employee::Productivity_bonus = productivity_bonus;
+void Employee::setProductivity_bonus(float productivity_bonus, Manager& object) {
+	if (object.getActive_state() == true) {
+		Employee::Productivity_bonus = productivity_bonus;
+		Employee::Salary = Employee::Salary * (100 + Employee::Productivity_bonus) / 100;
+	}
+	else std::cout << "Access denied. (Manager's state is deactivated)" << std::endl;
 }
 void activateWorkingDocument(Employee& object, float salary, unsigned short height, unsigned short weight) {
 	srand(time(0));
@@ -71,5 +77,5 @@ void activateWorkingDocument(Employee& object, float salary, unsigned short heig
 	object.Weight = weight;
 	object.WorkingID = rand() % 10000000;
 	object.Active_state = true;
-	std::cout << "Profile activated." << std::endl;
+	std::cout << "Profile activated. (" << object.Name << ")" << std::endl;
 }

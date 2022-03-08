@@ -1,6 +1,7 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 #include <string>
+#include "Manager.h"
 
 class Employee {
 public:
@@ -16,8 +17,8 @@ public:
 	unsigned int getWorkingID();
 	bool getActive_state();
 	float getSalary();
-	void setSalary(float salary);
-	void setProductivity_bonus(float productivity_bonus);
+	void setSalary(float salary, Manager& object);
+	void setProductivity_bonus(float productivity_bonus, Manager& object);
 	
 private:
 	float Salary, Productivity_bonus;
