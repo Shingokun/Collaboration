@@ -32,19 +32,18 @@ std::string Manager::getJoin_date()
 std::string Manager::getTitle() {
 	return Manager::Title;
 }
+unsigned int Manager::getWorkingID() {
+	return Manager::WorkingID;
+}
 unsigned short Manager::getAge() {
 	time_t now = time(0);
 	tm* localtm = localtime(&now);
 	unsigned short temp = Manager::Date_of_birth[Manager::Date_of_birth.length() - 1] - 48;
-
 	for (unsigned short a = 1; a < 4; a++) {
 		temp += (Manager::Date_of_birth[Manager::Date_of_birth.length() - 1 - a] - 48) * pow(10, a);
 	}
 	Manager::Age = 1900 + localtm->tm_year - temp;
 	return Manager::Age;
-}
-unsigned int Manager::getWorkingID() {
-	return 0;
 }
 bool Manager::getActive_state() {
 	return Manager::Active_state;

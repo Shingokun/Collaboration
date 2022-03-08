@@ -22,8 +22,10 @@ int main() {
 
     e1.setSalary(3000, m1);
     e1.setProductivity_bonus(10, m1);
+
     cout << "Employee's final salary: " << e1.getSalary() << "$" << endl;
 
     system("pause");
     return 0;
 }
+

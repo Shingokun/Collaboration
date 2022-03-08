@@ -32,11 +32,17 @@ std::string Employee::getJoin_date() {
 std::string Employee::getTitle() {
 	return Employee::Title;
 }
+float Employee::getSalary() {
+	return Employee::Salary;
+}
+unsigned int Employee::getWorkingID() {
+	if (Employee::Active_state == true) return Employee::WorkingID;
+	else std::cout << "Worker has not been activated yet.";
+}
 unsigned short Employee::getAge() {
 	time_t now = time(0);
 	tm* localtm = localtime(&now);
 	unsigned short temp = Employee::Date_of_birth[Employee::Date_of_birth.length() - 1] - 48;
-
 	for (unsigned short a = 1; a < 4; a++) {
 		temp += (Employee::Date_of_birth[Employee::Date_of_birth.length() - 1 - a] - 48) * pow(10, a);
 	}
@@ -49,15 +55,8 @@ unsigned short Employee::getHeight() {
 unsigned short Employee::getWeight() {
 	return Employee::Weight;
 }
-unsigned int Employee::getWorkingID() {
-	if (Employee::Active_state == true) return Employee::WorkingID;
-	else std::cout << "Worker has not been activated yet.";
-}
 bool Employee::getActive_state() {
 	return Employee::Active_state;
-}
-float Employee::getSalary() {
-	return Employee::Salary;
 }
 void Employee::setSalary(float salary, Manager& object) {
 	if (object.getActive_state() == true) Employee::Salary = salary * (100 + Employee::Productivity_bonus) / 100;

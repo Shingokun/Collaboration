@@ -10,13 +10,14 @@ public:
 	std::string getDate_of_birth();
 	std::string getJoin_date();
 	std::string getTitle();
-	unsigned short getAge();
 	unsigned int getWorkingID();
+	unsigned short getAge();
 	bool getActive_state();
+
 private:
+	std::string Name, Gender, Date_of_birth, Join_date, Title;
 	unsigned int WorkingID;
 	unsigned short Age;
-	std::string Name, Gender, Date_of_birth, Join_date, Title;
 	bool Active_state;
 
 	friend void activateWorkingDocument(Manager& object, unsigned short height, unsigned short weight);
