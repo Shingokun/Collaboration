@@ -9,15 +9,24 @@ public:
 	std::string getGender();
 	std::string getDate_of_birth();
 	std::string getJoin_date();
-	unsigned short int getAge();
-	void setAge(unsigned short int age);
+	std::string getTitle();
+	unsigned short getAge();
+	unsigned short getHeight();
+	unsigned short getWeight();
+	unsigned int getWorkingID();
+	bool getActive_state();
+	float getSalary();
+	void setSalary(float salary);
+	void setProductivity_bonus(float productivity_bonus);
 	
 private:
 	float Salary, Productivity_bonus;
 	unsigned int WorkingID;                                                                                
-	unsigned short int Age, Height, Weight;
-	bool Available_state;
+	unsigned short Age, Height, Weight;
+	bool Active_state;
 	std::string Name, Gender, Date_of_birth, Join_date, Title;
+
+	friend void activateWorkingDocument(Employee &object, float salary, unsigned short height, unsigned short weight);
 };
 
 #endif // !EMPLOYEE_H
