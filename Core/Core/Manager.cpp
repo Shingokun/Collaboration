@@ -25,7 +25,6 @@ std::string Manager::getGender() {
 std::string Manager::getDate_of_birth() {
 	return Manager::Date_of_birth;
 }
-
 std::string Manager::getJoin_date()
 {
 	return Manager::Join_date;
