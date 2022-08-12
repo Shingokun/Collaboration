@@ -26,6 +26,6 @@ int main() {
     cout << "Employee's final salary: " << e1.getSalary() << "$" << endl;
 
     system("pause");
-    return 0;
+    
 }
 
