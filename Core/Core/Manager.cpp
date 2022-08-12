@@ -17,7 +17,7 @@ Manager::Manager(std::string name, std::string gender, std::string date_of_birth
 	std::cout << "Profile created. (" << Manager::Name << ")" << std::endl;
 }
 std::string Manager::getName() {
-	return Manager::Name;
+	return Manager::;
 }
 std::string Manager::getGender() {
 	return Manager::Gender;
